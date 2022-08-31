@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
+import Tooltip from "../../extraui/tooltip";
 
-const Navbar = ({ toggleAuth, setToggleAuth }) => {
+const Navbar = ({ setToggleAuth }) => {
   const user = JSON.parse(localStorage.getItem("vite-login-user"));
 
   const handleLogout = () => {
-    localStorage.removeItem("vite-login-user");
-    setToggleAuth(false);
+    const result = confirm("Are you sure you want to logout?");
+    if (result) {
+      localStorage.removeItem("vite-login-user");
+      setToggleAuth(false);
+    }
   };
 
   useEffect(() => {
@@ -30,18 +34,14 @@ const Navbar = ({ toggleAuth, setToggleAuth }) => {
           </Link>
         </div>
         <div className="nav-auth">
-          {toggleAuth ? (
-            <Link to="/login" className="nav-link" onClick={handleLogout}>
-              {user !== null && user.name}
-            </Link>
-          ) : (
-            <Link to="/login" className="nav-link">
-              login
-            </Link>
-          )}
-          <Link to="/register" className="nav-link">
-            register
-          </Link>
+          <Tooltip
+            text="logout"
+            child={
+              <Link to="/login" className="nav-link" onClick={handleLogout}>
+                {user !== null && user.name}
+              </Link>
+            }
+          />
         </div>
       </ul>
     </nav>

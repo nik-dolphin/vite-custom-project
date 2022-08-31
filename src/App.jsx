@@ -11,7 +11,7 @@ function App() {
   const [toggleAuth, setToggleAuth] = useState(true);
   return (
     <BrowserRouter>
-      <Navbar setToggleAuth={setToggleAuth} toggleAuth={toggleAuth} />
+      {toggleAuth && <Navbar setToggleAuth={setToggleAuth} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
