@@ -1,41 +1,118 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #2196f3;
+  cursor: pointer;
+  box-shadow: 0 0 4px #999;
+  outline: none;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: aliceblue;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  box-shadow: 0 3px 20px rgb(68, 68, 68);
+  height: 4rem;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  width: 80vw;
+  padding: 0 0.7vw;
+  text-transform: uppercase;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-auth,
+.nav-layout {
+  display: flex;
+  padding: 1px 0.7px;
+  gap: 10rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.parentForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+.form-title {
+  font-family: cursive;
+  margin-bottom: 70px;
+}
+
+.form {
+  background-color: rgb(208, 228, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 50px;
+  width: 30em;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 0 3em -4px rgb(231, 193, 193);
+}
+
+.name,
+.age,
+.email,
+.password {
+  padding: 10px;
+  width: 90%;
+  margin: 10px;
+}
+
+.submit {
+  padding: 12px 18px;
+}
+
+.submit-button {
+  padding: 12px 18px;
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    height: 50%;
   }
-  to {
-    transform: rotate(360deg);
+
+  ul,
+  .nav-auth,
+  .nav-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
